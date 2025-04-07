@@ -6,7 +6,7 @@
 #    By: turescu <turescu@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/06 16:18:21 by turescu           #+#    #+#              #
-#    Updated: 2025/04/06 17:07:05 by turescu          ###   ########.fr        #
+#    Updated: 2025/04/07 14:04:47 by turescu          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CXX = @c++
 RM = @rm -f
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 OBJS = $(SRC:.cpp=.o)
-NAME = convert
+NAME = template
 %.o: %.cpp	
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 all: $(NAME)
