@@ -6,7 +6,7 @@
 /*   By: turescu <turescu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 14:10:46 by turescu           #+#    #+#             */
-/*   Updated: 2025/04/07 14:32:09 by turescu          ###   ########.fr       */
+/*   Updated: 2025/04/07 14:58:46 by turescu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,12 @@ int main() {
     iter(doubleArr, 5, incrementElement<double>);
     iter(doubleArr, 5, printElement<double>);
     std::cout << RESET << std::endl;
+    return 0;
 }
+
+/*
+-when we call the functions printElement or incrementElement(function templates),
+we are passing instatiated versions of those FUNCTION TEMPLATES specifically for 
+a certain type ( like <int> or <char>)
+-so incrementElement<int> is an INSTANTIATED FUNCTION TEMPLATE.
+*/
