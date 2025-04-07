@@ -6,7 +6,7 @@
 /*   By: turescu <turescu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 18:24:48 by turescu           #+#    #+#             */
-/*   Updated: 2025/04/07 19:21:05 by turescu          ###   ########.fr       */
+/*   Updated: 2025/04/07 20:52:04 by turescu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,34 @@ int main() {
         std::cout << RED  << "Exception caught: Index out of bounds!" << RESET << std::endl;
     }
 
-     
+    std::cout << PINK << "-----Checking for negative index-----" << RESET << std::endl;
+    try {
+        std::cout << "Trying to access negativ index (-1)" << std::endl;
+        size_t negativeIndex = -1; // since size_t is unsigned, -1 will be translated into a very big number
+        std::cout << strArr1[negativeIndex] << std::endl;
+    } catch (const std::exception& e) {
+        std::cout << RED << "Exception caught: Index out of bounds!" << RESET << std::endl;
+    }
+
+    std::cout << PINK << "-----Testing empty array access-----" << RESET  << std::endl;
+    try {
+        std::cout << "Trying to access an element in an empty array" << std::endl;
+        std::cout << emptyArr[0] << std::endl;
+    } catch (const std::exception& e) {
+        std::cout << RED << "Exception caught: Index out of bounds!" << RESET << std::endl;
+    }
+
+    std::cout << PINK << "-----Testing self-assignmnet-----" << RESET << std::endl;
+    Array<int> selfAssign(3);
+    selfAssign.fill(42);
+    std::cout << "Before self-assignment: " << std::endl;
+    for (size_t i = 0; i < selfAssign.size(); i++) {
+        std::cout << YELLOW << "selfAssign[" << i << "] = " << selfAssign[i] << RESET << std::endl;
+    }
+    selfAssign = selfAssign; //Self-assignment
+    std::cout << "After self-assignment: " << std::endl;
+    for (size_t i = 0; i < selfAssign.size(); i++) {
+        std::cout << YELLOW << "selfAssign[" << i << "] = " << selfAssign[i] << RESET << std::endl;
+    }
     return (0);
-} 
+}  
